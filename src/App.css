@@ -3,3 +3,16 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600');
 /* Navbar */
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,400');
+
+nav.bg-red {
+  background-color: rgb(179, 0, 0) !important;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255) !important;
+  font-size: 20px !important;
+}
+
+.nav-link:hover {
+  color: rgb(4, 0, 255) !important;
+}
