@@ -10,8 +10,8 @@
 }
 
 .AppWindow {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 nav.bg-red {
@@ -30,4 +30,5 @@ nav.bg-red {
 .cardStyle {
   background-color: blueviolet !important;
   margin: 1rem;
+  padding: 0px;
 }
