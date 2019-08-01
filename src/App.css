@@ -7,6 +7,7 @@
 .App {
   padding-top: 5rem;
   min-height: 100vh;
+  font-family: Titillium !important;
 }
 
 .AppWindow {
@@ -28,7 +29,16 @@ nav.bg-red {
 }
 
 .cardStyle {
-  background-color: blueviolet !important;
   margin: 1rem;
   padding: 0px;
+}
+
+.cardImage {
+  width: 65% !important;
+  margin: auto !important;
+}
+
+.cardName {
+  font-weight: 600 !important;
+  font-family: Raleway !important;
 }
