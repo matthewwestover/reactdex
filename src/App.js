@@ -2,13 +2,18 @@ import React, {Component, Fragment} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Navbar from './components/Navbar';
+import Dashboard from './components/Dashboard';
+;
 
 class App extends Component {
   render() {
     return (
-      <Fragment>
+      <div className='App'>
         <Navbar />
-      </Fragment>
+        <div className='AppWindow'>
+          <Dashboard />
+        </div>
+      </div>
     );
   }
 }

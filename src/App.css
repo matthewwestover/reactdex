@@ -4,6 +4,16 @@
 /* Navbar */
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,400');
 
+.App {
+  padding-top: 5rem;
+  min-height: 100vh;
+}
+
+.AppWindow {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 nav.bg-red {
   background-color: rgb(179, 0, 0) !important;
 }
@@ -15,4 +25,9 @@ nav.bg-red {
 
 .nav-link:hover {
   color: rgb(4, 0, 255) !important;
+}
+
+.cardStyle {
+  background-color: blueviolet !important;
+  margin: 1rem;
 }
