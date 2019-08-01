@@ -1,8 +1,10 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import {Switch, Route, } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
+import NoMatch from './components/NoMatch';
 import background from './assets/background.jpg'
 
 class App extends Component {
@@ -11,7 +13,10 @@ class App extends Component {
       <div className='App' style={{ background: `url(${background})` }}>
         <Navbar />
         <div className='AppWindow'>
-          <Dashboard />
+          <Switch>
+            <Route exact path='/' component={Dashboard} />
+            <Route component={NoMatch} />
+          </Switch>
         </div>
       </div>
     );

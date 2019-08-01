@@ -4,7 +4,7 @@ import spinner from '../assets/spinner.gif';
 import styled from 'styled-components';
 
 const Sprite = styled.img`
-  width: 65% !important;
+  width: 50% !important;
   display: none;
 `
 
@@ -33,6 +33,7 @@ class PokemonCard extends Component {
         <Card.Header>Pokédex #{pokemonIndex}</Card.Header>
         {this.state.imageLoading ? (
           <img
+            alt="Loading"
             src={spinner}
             className="card-img-top rounded mx-auto d-block mt-2"
           />
