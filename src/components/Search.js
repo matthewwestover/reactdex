@@ -1,11 +1,36 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom'
-import { Form, FormControl, Button } from 'react-bootstrap';
+import { Form, FormControl, Button, } from 'react-bootstrap';
+import Autosuggest from 'react-autosuggest';
+
+const pokemon = [
+  'Bulbasaur',
+  'Charmander',
+  'Squirtle',
+  'Rattata',
+  'Mewtwo',
+];
+
+const getSuggestions = value => {
+  const inputValue = value.trim().toLowerCase();
+  const inputLength = inputValue.length;
+
+  return inputLength === 0 ? [] : pokemon.filter(pokemon =>
+    pokemon.toLowerCase().slice(0, inputLength) === inputValue
+  );
+};
+
+const getSuggestionValue = suggestion => suggestion
+
+const renderSuggestion = suggestion => (
+  <span>{suggestion}</span>
+);
 
 class Search extends Component {
   state = {
     value: '',
+    suggestions: [],
   }
 
   handleSubmit = e => {
@@ -18,22 +43,55 @@ class Search extends Component {
       })
   } 
 
+  onChange = (event, {newValue, }) => {
+    this.setState({
+      value: newValue
+    });
+  }
+
+  onSuggestionsFetchRequested = ({ value }) => {
+    this.setState({
+      suggestions: getSuggestions(value)
+    });
+  };
+
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      suggestions: []
+    });
+  };
+
   handleChange = (event) => {
     this.setState({ value: event.target.value });
   }
 
   render() {
-    const { value } = this.state; 
+    const { value, suggestions } = this.state; 
+    const inputProps = {
+      placeholder: 'Search',
+      value,
+      onChange: this.onChange,
+      className: 'mr-sm-2',
+      type: 'text'
+    };
     return(
     <Form inline className="pr-5" onSubmit={this.handleSubmit}>
-      <FormControl 
+      <Autosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+      />
+      {/* <FormControl 
         type="text" 
         name="Search"
         placeholder="Search" 
         value={value}
         className="mr-sm-2" 
         onChange={this.handleChange}
-      />
+      /> */}
       <Button variant="primary" onClick={this.handleSubmit}>Search</Button>
     </Form>
     )
