@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import spinner from '../assets/spinner.gif';
 import styled from 'styled-components';
 
@@ -7,7 +8,6 @@ const Sprite = styled.img`
   width: 50% !important;
   display: none;
 `
-
 
 class PokemonCard extends Component {
   state = {
@@ -29,29 +29,29 @@ class PokemonCard extends Component {
     const {name, imageURL, pokemonIndex} = this.state;
 
     return(
-      <Card className='cardStyle col-md-2 col-sm-12' style={{ marginBottom: '1rem'}}>
-        <Card.Header>#{pokemonIndex}</Card.Header>
-        {this.state.imageLoading ? (
-          <img
-            alt="Loading"
-            src={spinner}
-            className="card-img-top rounded mx-auto d-block mt-2"
-          />
-          ) : null}
-          <Sprite
-            className="card-img-top rounded mx-auto mt-2"
-            src={imageURL}
-            onLoad={() => this.setState({ imageLoading: false })}
-            style={
-              this.state.imageLoading
-              ? null
-              : { display: 'block' }
-            }
+        <Link to={`/pokemon/${pokemonIndex}`} as={Card} className='cardStyle col-md-2 col-sm-12' style={{ marginBottom: '1rem'}}>
+          <Card.Header>#{pokemonIndex}</Card.Header>
+          {this.state.imageLoading ? (
+            <img
+              alt="Loading"
+              src={spinner}
+              className="card-img-top rounded mx-auto d-block mt-2"
             />
-        <Card.Body className='mx-auto'>
-          <Card.Text className='cardName'>{name.toLowerCase().split(' ').map(letter => letter.charAt(0).toUpperCase() + letter.substring(1)).join(' ')}</Card.Text>
-        </Card.Body>
-      </Card>
+            ) : null}
+            <Sprite
+              className="card-img-top rounded mx-auto mt-2"
+              src={imageURL}
+              onLoad={() => this.setState({ imageLoading: false })}
+              style={
+                this.state.imageLoading
+                ? null
+                : { display: 'block' }
+              }
+              />
+          <Card.Body className='mx-auto'>
+            <Card.Text className='cardName'>{name.toLowerCase().split(' ').map(letter => letter.charAt(0).toUpperCase() + letter.substring(1)).join(' ')}</Card.Text>
+          </Card.Body>
+        </Link>
     )
   }
 };
