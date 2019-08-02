@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, } from 'react-bootstrap';
+import Search from './Search'
 import Logo from '../assets/PokemonLogo.png'
 
 class NavStuff extends Component {
@@ -18,10 +19,7 @@ class NavStuff extends Component {
           {/* <Nav.Link href='/team'>Team Builder</Nav.Link> */}
           {/* <Nav.Link href='/about'>About</Nav.Link> */}
         </Nav>
-        <Form inline className="pr-5">
-          <FormControl type="text" placeholder="Coming Soon!" className="mr-sm-2" disabled />
-          <Button variant="primary" disabled>Search</Button>
-        </Form>
+        <Search />
       </Navbar>
     )
   }
