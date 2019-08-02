@@ -16,6 +16,7 @@ class NavStuff extends Component {
         <Nav className="mr-auto" style={{ color: 'white !important'}}>
           <Nav.Link href="/">Pokédex</Nav.Link>
           {/* <Nav.Link href='/team'>Team Builder</Nav.Link> */}
+          {/* <Nav.Link href='/about'>About</Nav.Link> */}
         </Nav>
         <Form inline className="pr-5">
           <FormControl type="text" placeholder="Coming Soon!" className="mr-sm-2" disabled />
