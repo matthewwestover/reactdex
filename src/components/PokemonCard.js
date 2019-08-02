@@ -30,7 +30,7 @@ class PokemonCard extends Component {
 
     return(
       <Card className='cardStyle col-md-2 col-sm-12' style={{ marginBottom: '1rem'}}>
-        <Card.Header>Pokédex #{pokemonIndex}</Card.Header>
+        <Card.Header>#{pokemonIndex}</Card.Header>
         {this.state.imageLoading ? (
           <img
             alt="Loading"
