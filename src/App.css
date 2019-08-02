@@ -62,3 +62,7 @@ nav.bg-red {
   font-weight: 600 !important;
   font-family: Raleway !important;
 }
+
+.loadingPokes {
+  color:rgb(69, 0, 179)
+}

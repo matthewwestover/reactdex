@@ -2,13 +2,14 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import PokemonCard from './PokemonCard';
 import InfiniteScroll from 'react-infinite-scroller';
+import { Alert } from 'react-bootstrap';
 
 class PokemonList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: 'https://pokeapi.co/api/v2/pokemon?limit=25&offset=0',
-      items: 25,
+      url: 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0',
+      items: 20,
       pokemon: [],
       hasMoreItems: true,
       nextHref: null,
@@ -24,7 +25,7 @@ class PokemonList extends Component {
   
   loadMore(page) {
     const updateURL = `https://pokeapi.co/api/v2/pokemon?limit=25&offset=${this.state.items}`
-    if(this.state.items===825){
+    if(this.state.items===820){
       this.setState({ hasMoreItems: false});
     }else{
         setTimeout(() => {
@@ -32,14 +33,14 @@ class PokemonList extends Component {
             .then( res => {
               this.setState({ 
                 pokemon: [...this.state.pokemon, ...res.data.results],
-                items: this.state.items + 25});
+                items: this.state.items + 20});
             })
     }, 2000);
     }
   }
 
   render() {
-    const loading = <h1>Loading Pokémon</h1>;
+    const loading = <Alert variant='primary'>Loading Pokemon</Alert>
     return(
       <Fragment>
         <InfiniteScroll
