@@ -34,6 +34,10 @@ nav.bg-red {
   color: rgb(4, 0, 255) !important;
 }
 
+.spinner {
+  height: 9.3rem;
+}
+
 .cardStyle {
   margin: 1rem;
   padding: 0px;
@@ -49,6 +53,13 @@ nav.bg-red {
   color: black;
   background-color: #fafafa;
 }
+
+.cardDetails {
+  padding: 0px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 
 .noMatchStyle {
   margin: 1rem;
@@ -84,11 +95,11 @@ nav.bg-red {
   width: 240px;
   height: 30px;
   padding: 10px 20px;
-  font-family: Helvetica, sans-serif;
+  font-family: Titillium, sans-serif;
   font-weight: 300;
   font-size: 16px;
   border: 1px solid #aaa;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .react-autosuggest__input--focused {
@@ -111,7 +122,7 @@ nav.bg-red {
   width: 280px;
   border: 1px solid #aaa;
   background-color: #fff;
-  font-family: Helvetica, sans-serif;
+  font-family: Titillium, sans-serif;
   font-weight: 300;
   font-size: 16px;
   border-bottom-left-radius: 4px;

@@ -35,7 +35,7 @@ class PokemonCard extends Component {
             <img
               alt="Loading"
               src={spinner}
-              className="card-img-top rounded mx-auto d-block mt-2"
+              className="card-img-top rounded mx-auto d-block mt-2 spinner"
             />
             ) : null}
             <Sprite
